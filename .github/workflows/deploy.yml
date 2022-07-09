@@ -31,13 +31,13 @@ jobs:
     - name: Executando docker compose
       uses: appleboy/ssh-action@master
       with:
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        key: ${{ secrets.SSHKEY }}
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
         script_stop: true
         script: |
-          cd ${{ env.PROJECT_DIRECTORY }}
+          cd ${{ env.PROJECT_DIRECTORY}}
           docker-compose build
           docker-compose up --no-deps -d
 

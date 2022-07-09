@@ -18,7 +18,7 @@ namespace CefacAPI.Controllers
             public DateTime DataNascimento { get; set; }
             public string Email { get; set; }
         }
-
+       
 
         [HttpPost]
         public IActionResult AtualizarPlanilha([FromBody] TestePayload request)
@@ -26,7 +26,7 @@ namespace CefacAPI.Controllers
             _logger.LogInformation("LOG {log}", System.Text.Json.JsonSerializer.Serialize(request));
 
             Logger.Log("LOG {0}", System.Text.Json.JsonSerializer.Serialize(request));
-            return Ok("OK");
+            return Ok();
         }
     }
 }
