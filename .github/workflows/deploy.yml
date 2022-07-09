@@ -37,7 +37,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script_stop: true
         script: |
-          cd $PROJECT_DIRECTORY
+          cd ${{ env.PROJECT_DIRECTORY }}
           docker-compose build
           docker-compose up --no-deps -d
 
