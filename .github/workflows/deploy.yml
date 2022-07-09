@@ -1,6 +1,13 @@
-name: Deploy
+name: Deploy de teste
 
-on: [push]
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      # Push events on main branch
+      - master
+env:
+  PROJECT_DIRECTORY: /home/deploy
 
 jobs:
   build:
@@ -19,7 +26,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
       with:
         source: "."
-        target: "/home/deploy"
+        target: $PROJECT_DIRECTORY
 
     - name: Executando docker compose
       uses: appleboy/ssh-action@master
@@ -30,7 +37,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script_stop: true
         script: |
-          cd /home/deploy
+          cd $PROJECT_DIRECTORY
           docker-compose build
           docker-compose up --no-deps -d
 
