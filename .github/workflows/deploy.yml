@@ -19,7 +19,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
       with:
         source: "."
-        target: "/root/deploy"
+        target: "/home/deploy"
 
     - name: Executando docker compose
       uses: appleboy/ssh-action@master
@@ -30,7 +30,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script_stop: true
         script: |
-          cd /root/deploy
+          cd /home/deploy
           docker-compose build
           docker-compose up --no-deps -d
 
