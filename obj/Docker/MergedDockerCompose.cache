@@ -10,4 +10,12 @@ services:
     - target: 80
     volumes:
     - C:\Users\gedeo\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  redis-compose:
+    command: redis-server --requirepass 4321 --appendonly yes
+    hostname: redis
+    image: redis
+    ports:
+    - published: 6379
+      target: 6379
+    restart: always
 version: '3.4'
