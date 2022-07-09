@@ -20,10 +20,10 @@ jobs:
     - name: Copy repository contents via scp
       uses: appleboy/scp-action@master
       env:
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSHKEY }}
       with:
         source: "."
         target: ${{ env.PROJECT_DIRECTORY }}
@@ -31,15 +31,13 @@ jobs:
     - name: Executando docker compose
       uses: appleboy/ssh-action@master
       with:
-        key: ${{ secrets.SSHKEY }}
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
-        script_stop: true
+        key: ${{ secrets.SSHKEY }}
         script: |
-          cd ${{ env.PROJECT_DIRECTORY}}
-          docker-compose build
-          docker-compose up --no-deps -d
+          cd ${{ env.PROJECT_DIRECTORY}} && ./server_deploy.sh
+
 
 
   
