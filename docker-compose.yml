@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  cefacapi:
+    image: ${DOCKER_REGISTRY-}cefacapi
+    build:
+      context: .
+      dockerfile: CefacAPI/Dockerfile
+
+  redis-compose:
+    image: redis
+    restart: always
+    command: redis-server --requirepass 4321 --appendonly yes
+    hostname: redis
+    ports:
+    - "6379:6379"
