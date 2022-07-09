@@ -21,14 +21,19 @@ jobs:
         source: "."
         target: "/root/deploy"
 
-    - name: Executing remote command
+    - name: Executando docker compose
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
+        script_stop: true
         script: |
+          cd /root/deploy
           docker-compose build
           docker-compose up --no-deps -d
+
+
+  
         
