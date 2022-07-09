@@ -23,7 +23,9 @@ namespace CefacAPI.Controllers
         [HttpPost]
         public IActionResult AtualizarPlanilha([FromBody] TestePayload request)
         {
-            _logger.LogDebug("teste", request);
+            _logger.LogInformation("LOG {log}", System.Text.Json.JsonSerializer.Serialize(request));
+
+            Logger.Log("LOG {0}", System.Text.Json.JsonSerializer.Serialize(request));
             return Ok("OK");
         }
     }
