@@ -10,7 +10,6 @@ C:\Users\gedeo\source\repos\CefacAPI\CefacAPI\bin\Debug\net6.0\Swashbuckle.AspNe
 C:\Users\gedeo\source\repos\CefacAPI\CefacAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\gedeo\source\repos\CefacAPI\CefacAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\gedeo\source\repos\CefacAPI\CefacAPI\bin\Debug\net6.0\CronExpression.dll
-C:\Users\gedeo\source\repos\CefacAPI\CefacAPI\bin\Debug\net6.0\CronExpression.pdb
 C:\Users\gedeo\source\repos\CefacAPI\CefacAPI\obj\Debug\net6.0\CefacAPI.csproj.AssemblyReference.cache
 C:\Users\gedeo\source\repos\CefacAPI\CefacAPI\obj\Debug\net6.0\CefacAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\gedeo\source\repos\CefacAPI\CefacAPI\obj\Debug\net6.0\CefacAPI.AssemblyInfoInputs.cache

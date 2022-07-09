@@ -16,8 +16,7 @@
 
   <ItemGroup>
     <Reference Include="CronExpression">
-      <HintPath>..\..\CronInterpreter\CronExpression\bin\Debug\net6.0\CronExpression.dll</HintPath>
+      <HintPath>..\CronExpression.dll</HintPath>
     </Reference>
   </ItemGroup>
-
 </Project>

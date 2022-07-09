@@ -10,7 +10,6 @@ C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\Swashbuckle.AspNetCore.Swagger.dl
 C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\Microsoft.OpenApi.dll
 C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\CefacAPI.pdb
-C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\CronExpression.pdb
 C:\Users\gedeo\source\repos\CefacAPI\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\gedeo\source\repos\CefacAPI\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\gedeo\source\repos\CefacAPI\obj\Debug\docker-compose.dcproj.CopyComplete
