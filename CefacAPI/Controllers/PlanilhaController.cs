@@ -21,7 +21,7 @@ namespace CefacAPI.Controllers
        
 
         [HttpPost]
-        public IActionResult AtualizarPlanilha([FromBody] TestePayload request)
+        public IActionResult AtualizarPlanilha([FromBody] IEnumerable<TestePayload> request)
         {
             _logger.LogInformation("LOG {log}", System.Text.Json.JsonSerializer.Serialize(request));
             Logger.Log("LOG {0}", System.Text.Json.JsonSerializer.Serialize(request));
