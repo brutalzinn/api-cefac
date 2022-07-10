@@ -13,3 +13,7 @@ C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\CefacAPI.pdb
 C:\Users\gedeo\source\repos\CefacAPI\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\gedeo\source\repos\CefacAPI\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\gedeo\source\repos\CefacAPI\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\StackExchange.Redis.dll
+C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\Pipelines.Sockets.Unofficial.dll
+C:\Users\gedeo\source\repos\CefacAPI\bin\Debug\System.Diagnostics.PerformanceCounter.dll

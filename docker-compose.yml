@@ -8,11 +8,14 @@ services:
       dockerfile: CefacAPI/Dockerfile
     ports:
     - "5000:80"
+    links:
+    - "redis_compose"
+    depends_on:
+    - "redis_compose"
 
-  redis-compose:
+  redis_compose:
     image: redis
     restart: always
-    command: redis-server --requirepass 4321 --appendonly yes
     hostname: redis
     ports:
     - "6379:6379"

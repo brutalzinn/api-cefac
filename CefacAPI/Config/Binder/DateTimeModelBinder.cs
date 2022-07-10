@@ -19,7 +19,6 @@ namespace CefacAPI.Config.Binder
             bindingContext.ModelState.SetModelValue(modelName, valueProviderResult);
 
             var dateStr = valueProviderResult.FirstValue;
-            // Here you define your custom parsing logic, i.e. using "de-DE" culture
             if (!DateTime.TryParse(dateStr, new CultureInfo("pt-BR"), DateTimeStyles.None, out DateTime date))
             {
                 bindingContext.ModelState.TryAddModelError(bindingContext.ModelName, "DateTime should be in format pt-BR culture 'dd-MM-yyyy HH:mm:ss'");
