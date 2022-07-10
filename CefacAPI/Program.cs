@@ -25,10 +25,10 @@ builder.Services.AddSingleton<IRedisService, RedisService>();
 builder.Services.AddSingleton<IHostedService>(service => {
 
     var resource = workers.First(e => e.Nome.Equals("EnviarEmail"));
-    var logger = service.GetRequiredService<ILogger<EnviarEmail>>();
+    var logger = service.GetRequiredService<ILogger<EnviarEmailWorker>>();
     var redisService = service.GetRequiredService<IRedisService>();
 
-    return new EnviarEmail(logger, redisService, resource);
+    return new EnviarEmailWorker(logger, redisService, resource);
 });
 
 
