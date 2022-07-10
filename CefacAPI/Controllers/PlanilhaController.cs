@@ -1,3 +1,4 @@
+using CefacAPI.Messages;
 using CefacAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,20 +16,12 @@ namespace CefacAPI.Controllers
             _logger = logger;
             _redisService = redisService;
         }
-
-        public class TestePayload
-        {
-            public string Nome { get; set; }
-            public DateTime DataNascimento { get; set; }
-            public string Email { get; set; }
-        }
-
         //planilha do google faz um post aqui
 
         [HttpGet("ObterAniversariantesDoMes")]
         public IActionResult ObterAniversariantesDoMes([FromQuery] int? mes)
         {
-            var listaAniversariantes = _redisService.Get<IEnumerable<TestePayload>>("tabela");
+            var listaAniversariantes = _redisService.Get<IEnumerable<DadosTabelaPayload>>("tabela");
 
             listaAniversariantes = listaAniversariantes.Where(x => x.DataNascimento.Month.Equals(mes.GetValueOrDefault(DateTime.Now.Month))).ToList();
             
@@ -38,7 +31,7 @@ namespace CefacAPI.Controllers
         [HttpGet("ObterAniversariantesProximoMes")]
         public IActionResult ObterAniversariantesProximoMes()
         {
-            var listaAniversariantes = _redisService.Get<IEnumerable<TestePayload>>("tabela");
+            var listaAniversariantes = _redisService.Get<IEnumerable<DadosTabelaPayload>>("tabela");
             var timeAtual = DateTime.Now;
             listaAniversariantes = listaAniversariantes.Where(x =>  x.DataNascimento.Month >= timeAtual.Date.Month).ToList();
 
@@ -48,13 +41,13 @@ namespace CefacAPI.Controllers
         [HttpGet("ObterAniversariantes")]
         public IActionResult ObterAniversariantes()
         {
-            var listaAniversariantes = _redisService.Get<IEnumerable<TestePayload>>("tabela");
+            var listaAniversariantes = _redisService.Get<IEnumerable<DadosTabelaPayload>>("tabela");
 
             return Ok(listaAniversariantes);
         }
 
         [HttpPost]
-        public IActionResult AtualizarPlanilha([FromBody] IEnumerable<TestePayload> request)
+        public IActionResult AtualizarPlanilha([FromBody] IEnumerable<DadosTabelaPayload> request)
         {
             var requestJson = System.Text.Json.JsonSerializer.Serialize(request);
             _logger.LogInformation("LOG {log}", requestJson);

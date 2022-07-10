@@ -21,13 +21,19 @@ builder.Services.AddStackExchangeRedisCache(options =>
 });
 
 builder.Services.AddSingleton<IRedisService, RedisService>();
-builder.Services.AddSingleton<IHostedService>(service => new EnviarEmail(service.GetService<ILogger<EnviarEmail>>(), workers));
 
+builder.Services.AddSingleton<IHostedService>(service => {
+
+    var resource = workers.First(e => e.Nome.Equals("EnviarEmail"));
+    var logger = service.GetRequiredService<ILogger<EnviarEmail>>();
+    var redisService = service.GetRequiredService<IRedisService>();
+
+    return new EnviarEmail(logger, redisService, resource);
+});
 
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 
 builder.Services.AddMvc(options =>
 {
