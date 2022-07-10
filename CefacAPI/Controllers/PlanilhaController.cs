@@ -15,7 +15,9 @@ namespace CefacAPI.Controllers
         public class TestePayload
         {
             public string Nome { get; set; }
-            public DateTime DataNascimento { get; set; }
+            
+            public string DataNascimento { get; set; }
+
             public string Email { get; set; }
         }
        
@@ -23,10 +25,8 @@ namespace CefacAPI.Controllers
         [HttpPost]
         public IActionResult AtualizarPlanilha([FromBody] TestePayload request)
         {
-            _logger.LogInformation("LOG {log}", System.Text.Json.JsonSerializer.Serialize(request));
-
             Logger.Log("LOG {0}", System.Text.Json.JsonSerializer.Serialize(request));
-            return Ok();
+            return new StatusCodeResult(204);
         }
     }
 }
